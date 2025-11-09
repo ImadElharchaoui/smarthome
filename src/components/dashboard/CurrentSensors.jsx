@@ -34,7 +34,7 @@ export default function CurrentSensors() {
   const gasDetected = gasValue > 2000; // Adjust threshold based on real readings
 
   const rainValue = latest.rainDetected ?? 0;
-  const rainValueDetected = rainValue > 100; // Adjust threshold based on real readings
+  const rainValueDetected = rainValue < 4095; // Adjust threshold based on real readings
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
