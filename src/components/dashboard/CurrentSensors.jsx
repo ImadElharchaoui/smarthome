@@ -85,9 +85,7 @@ export default function CurrentSensors() {
 
       <Card
         title="Rain"
-        value={
-          rainValueDetected ? `Detected (${rainValue})` : `Safe (${rainValue})`
-        }
+        value={rainValueDetected ? `Detected ` : `Safe`}
         unit=""
         icon={Droplets} // you can use another icon if you want
         bgGradient={
