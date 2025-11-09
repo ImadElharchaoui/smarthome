@@ -30,6 +30,9 @@ export default function CurrentSensors() {
     </div>
   );
 
+  const gasValue = latest.gas ?? 0;
+  const gasDetected = gasValue > 2000; // Adjust threshold based on real readings
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
       {/* Temperature */}
@@ -66,11 +69,11 @@ export default function CurrentSensors() {
       {/* Gas */}
       <Card
         title="Gas"
-        value={latest.gas > 250 ? "Detected" : "Safe"}
+        value={gasDetected ? `Detected (${gasValue})` : `Safe (${gasValue})`}
         unit=""
         icon={AlertCircle}
         bgGradient={
-          latest.gas > 250
+          gasDetected
             ? "bg-gradient-to-br from-orange-500 to-red-500"
             : "bg-gradient-to-br from-emerald-500 to-teal-600"
         }
