@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { auth, db } from "../../components/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
+import Spinner from "../../components/Spinner";
 
 function Profile() {
   const [userAuth, setUserAuth] = useState(null);
@@ -45,7 +46,11 @@ function Profile() {
   }, []);
 
   if (loading) {
-    return <div className="p-6 text-center">Loading profile...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <Spinner size="lg" color="text-purple-600" />
+      </div>
+    );
   }
 
   if (error) {

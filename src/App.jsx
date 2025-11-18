@@ -17,6 +17,7 @@ import Dashboard from "./pages/dashboard/dashboard";
 import Profile from "./pages/dashboard/profile";
 
 import DashboardLayout from "./components/dashboard/DashboardLayout"; // NEW
+import Spinner from "./components/Spinner";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -32,8 +33,8 @@ function App() {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        Loading...
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <Spinner size="lg" color="text-purple-600" />
       </div>
     );
   }
