@@ -7,7 +7,6 @@ import { LucideDivideCircle, LogOutIcon } from "lucide-react";
 
 const navItems = [
   { to: "/dashboard", icon: Home, label: "Dashboard" },
-  { to: "/devices", icon: LucideDivideCircle, label: "Devices" },
   { to: "/profile", icon: User2Icon, label: "Profile" },
 ];
 

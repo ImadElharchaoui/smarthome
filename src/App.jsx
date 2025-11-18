@@ -15,7 +15,6 @@ import { auth } from "./components/firebase";
 
 import Dashboard from "./pages/dashboard/dashboard";
 import Profile from "./pages/dashboard/profile";
-import Devices from "./pages/dashboard/devices";
 
 import DashboardLayout from "./components/dashboard/DashboardLayout"; // NEW
 
@@ -76,18 +75,6 @@ function App() {
               user ? (
                 <DashboardLayout>
                   <Profile />
-                </DashboardLayout>
-              ) : (
-                <Navigate to="/login" replace />
-              )
-            }
-          />
-          <Route
-            path="/devices"
-            element={
-              user ? (
-                <DashboardLayout>
-                  <Devices />
                 </DashboardLayout>
               ) : (
                 <Navigate to="/login" replace />
